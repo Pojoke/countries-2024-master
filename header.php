@@ -16,7 +16,7 @@
 <header class="masthead d-flex align-items-center">
             <div class="container px-4 px-lg-5 text-center">
                 <h1 class="mb-5">Books shop</h1>
-                <h3 class="mb-2"><em>Захоплюючі історії чекають на тебе!</em></h3>
+                <h3 class="mb-2"><em>Exciting stories await you!</em></h3>
                 
             </div>
         </header>
