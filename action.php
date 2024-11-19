@@ -13,7 +13,8 @@ function check_autorize($log, $pass)
 //     echo "No";
 // }
 
-function check_admin($log, $pass)  {
+function check_admin($log, $pass)
+{
     global $users;
     //echo $users[$log]['role'];
     return check_autorize($log, $pass) && $users[$log]['role'] == 'admin';
@@ -70,8 +71,9 @@ function out_arr()
 {
     global $countries;
     // делаем переменную $countries глобальной
+    
     $arr_out = [];
-    $arr_out[] = "<table>";
+    $arr_out[] = '<table class"table-info">';
     $arr_out[] = "<tr><td>№</td><td>Страна</td><td>Столица</td><td>Площадь</td><td>Население за 2000 год</td><td>Население за 2010 год</td><td>Среднее население</td></tr>";
     foreach ($countries as $country) {
         static $i = 1;
@@ -100,9 +102,10 @@ function out_arr()
 
 function out_arr_search(array $arr_index = null)
 {
+   
     global $countries; // делаем переменную $countries глобальной
     $arr_out = array();
-    $arr_out[] = "<table  class=\"table table-hover text-white-50\">";
+    $arr_out[] = "<table  class=\"table table-hover text-black-20 \">";
     $arr_out[] = "<tr><td>№</td><td>Country</td><td>
     Capital</td><td>Area</td><td>Population for 2000</td><td>Population for 2010</td><td>Average population</td></tr>";
     foreach ($countries as $index => $country) {
@@ -113,17 +116,24 @@ function out_arr_search(array $arr_index = null)
                 if (!is_array($value)) {
                     $str .= "<td>$value</td>";
                 } else {
+                    
                     foreach ($value as $k => $v) {
                         $str .= "<td>$v</td>";
+
                     }
+
                 }
             }
             $str .= "<td>" . (array_sum($country['population']) / count($country['population'])) . "</td></tr>";
             $arr_out[] = $str;
             $i++;
         }
+      
+            
+        
     }
     $arr_out[] = "</table>";
+
     return $arr_out;
 }
 
