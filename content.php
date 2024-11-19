@@ -177,9 +177,10 @@ if (isset($_POST['gosearch'])) {
 $str_form_s = '<h3>Сортировать по:</h3>
 <form action="content.php" method="post" name="sort_form" ">
     <select name="sort" id="sort" size="1">
-        <option value="name" >назва </option>
-        <option value="area" >площа</option>
-        <option value="population" >среднє населення</option>
+        <option value="name" >Назва книжки  </option>
+        <option value="price" >Ціна</option>
+        <option value="autor" >Автор</option>
+        <option value="genres" >Жанр</option>
     </select>
     <input type="submit" name="submit" class="btn btn-info my-3" value="OK" >
 </form>';

@@ -26,11 +26,11 @@ function check_admin($log, $pass)
 //     echo "No";
 // }
 
-function name($a, $b)
+function genres($a, $b)
 { // функция, определяющая способ сортировки (по названию столицы)
-    if ($a["capital"] < $b["capital"]) {
+    if ($a["genres"] < $b["genres"]) {
         return -1;
-    } elseif ($a["capital"] == $b["capital"]) {
+    } elseif ($a["genres"] == $b["genres"]) {
         return 0;
     } else {
         return 1;
@@ -38,26 +38,54 @@ function name($a, $b)
 
 }
 
-function area($a, $b)
+function price($a, $b)
 { // функция, определяющая способ сортировки (по названию столицы)
-    if ($a["area"] < $b["area"]) {
-        return -1;
-    } elseif ($a["area"] == $b["area"]) {
+    // if ($a["price"] < $b["price"]) {
+    //     return -1;
+    // } elseif ($a["price"] == $b["price"]) {
+    //     return 0;
+    // } else {
+    //     return 1;
+    // }
+
+    if ($a="price" == $b="price") {
         return 0;
-    } else {
-        return 1;
     }
+    return ($a="price" < $b="price") ? -1 : 1;
 }
 
-function population($a, $b)
-{ // функция, определяющая способ сортировки (по населению)
-    if ($a["population"]["2000"] + $a["population"]["2010"] < $b["population"]["2000"] + $b["population"]["2010"]) {
+function autor($a, $b)
+
+{ 
+    if ($a["autor"]["thir"] < $b["autor"]["thir"]) {
         return -1;
-    } elseif ($a["population"]["2000"] + $a["population"]["2010"] == $b["population"]["2000"] + $b["population"]["2010"]) {
+    } elseif ($a["autor"]["thir"] == $b["autor"]["thir"]) {
         return 0;
     } else {
         return 1;
-    }
+    } 
+    // функция, определяющая способ сортировки (по населению)
+    // if ($a["population"]["2000"] + $a["population"]["2010"] < $b["population"]["2000"] + $b["population"]["2010"]) {
+    //     return -1;
+    // } elseif ($a["population"]["2000"] + $a["population"]["2010"] == $b["population"]["2000"] + $b["population"]["2010"]) {
+    //     return 0;
+    // } else {
+    //     return 1;
+    // }
+    // if ($a["name-autor"] < $b["name-autor"]) {
+    //     return -1;
+    // } elseif ($a["name-autor"] == $b["name-autor"]) {
+    //     return 0;
+    // } else {
+    //     return 1;
+    // }
+    // if ($a["thir"] < $b["thir"]) {
+    //     return -1;
+    // } elseif ($a["thir"] == $b["thir"]) {
+    //     return 0;
+    // } else {
+    //     return 1;
+    // }
 
 }
 
@@ -74,7 +102,7 @@ function out_arr()
     
     $arr_out = [];
     $arr_out[] = '<table class"table-info">';
-    $arr_out[] = "<tr><td>№</td><td>Страна</td><td>Столица</td><td>Площадь</td><td>Население за 2000 год</td><td>Население за 2010 год</td><td>Среднее население</td></tr>";
+    $arr_out[] = "<tr><td>№</td><td>Назва книги</td><td>Жанр</td><td>Ціна</td><td>Ім'я автора </td><td>Прізвище </td></tr>";
     foreach ($countries as $country) {
         static $i = 1;
         //статическая глобальная переменная-счетчик
@@ -91,7 +119,7 @@ function out_arr()
             }
 
         }
-        $str .= "<td>" . (array_sum($country['population']) / count($country['population'])) . "</td>";
+        $str .= "<td>" . (array_sum($country['autor']) / count($country['autor'])) . "</td>";
         $str .= "</tr>";
         $arr_out[] = $str;
         $i++;
@@ -106,8 +134,8 @@ function out_arr_search(array $arr_index = null)
     global $countries; // делаем переменную $countries глобальной
     $arr_out = array();
     $arr_out[] = "<table  class=\"table table-hover text-black-20 \">";
-    $arr_out[] = "<tr><td>№</td><td>Country</td><td>
-    Capital</td><td>Area</td><td>Population for 2000</td><td>Population for 2010</td><td>Average population</td></tr>";
+    $arr_out[] = "<tr><td>№</td><td>Name</td><td>
+    genres</td><td>price</td><td>name-autor</td><td>thir</td></tr>";
     foreach ($countries as $index => $country) {
         if ($arr_index != null && in_array($index, $arr_index)) {
             static $i = 1;
@@ -124,7 +152,7 @@ function out_arr_search(array $arr_index = null)
 
                 }
             }
-            $str .= "<td>" . (array_sum($country['population']) / count($country['population'])) . "</td></tr>";
+            $str .= "<td>" . (array_sum($country['autor']) / count($country['autor'])) . "</td></tr>";
             $arr_out[] = $str;
             $i++;
         }
