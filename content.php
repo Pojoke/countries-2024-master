@@ -72,7 +72,7 @@ include "header.php";
             </div>
         </section>
 
- <section class="py-5 bg-light">
+ <section class="py-5 bg-light" id='about'>
                 <div class="container px-5 my-5">
                     <div class="text-center">
                         <h1 >About us</h1>
