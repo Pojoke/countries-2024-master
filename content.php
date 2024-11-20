@@ -1,6 +1,6 @@
 
     <?php require_once "action.php";
-    include "menu.php";
+include "menu.php";
 include "header.php";
 
 ?>
@@ -12,7 +12,7 @@ include "header.php";
 
                             <h1 class="mb-4 mt-5 " >Home</h1>
                             <p class="fs-5 mb-4">We are Books shop — a place where books come to life, and reading turns into a true delight. In our collection, you will find both modern bestsellers and classic editions, children's literature, and specialized books. We believe that every book has the power to change lives and open new horizons. So, we invite you to join us in exploring the world of stories, knowledge, and inspiration!</p>
-                           
+
                         </section>
                         <!-- Preview image figure-->
                         <img class="d-block mx-auto" src="assets/img/A_banner_image_for_a_bookstore,_measuring_900x400_ 1.jpg" alt="..." />
@@ -20,7 +20,7 @@ include "header.php";
                         <section class="content-section" id="genres">
             <div class="container px-4 px-lg-5">
                 <div class="content-section-heading text-center">
-                    
+
                     <h1 class="mb-5">Genres</h1>
                 </div>
                 <div class="row gx-0">
@@ -115,7 +115,7 @@ include "header.php";
 
 
 
-           
+
 <?php
 
 // $autorized = false;
@@ -143,14 +143,13 @@ include "header.php";
 //     echo $user_form;
 // }
 
-
 $str_form_search = "
 <div class=\"container\">
     <h3>Search:</h3>
     <form name='searchForm' action='content.php' method='post' onSubmit='return overify_login(this);'>
         <input type='text' name='search' class='form-control'>
         <input type='submit' name='gosearch' value='Confirm' class='btn btn-secondary my-2'>
-        
+
     </form>
 </div>";
 
@@ -173,8 +172,7 @@ if (isset($_POST['gosearch'])) {
     }
 }
 
-
-$str_form_s = '  
+$str_form_s = '
 <div class="container">
 <h3>Sort:</h3>
 <form action="content.php" method="post" name="sort_form" ">
@@ -183,6 +181,7 @@ $str_form_s = '
         <option value="price" >Ціна</option>
         <option value="autor" >Автор</option>
         <option value="genres" >Жанр</option>
+        <option value="exemp" >Кількість екземплярів</option>
     </select>
     <input type="submit" name="submit" class="btn btn-info my-3" value="OK" >
 </form>
@@ -201,7 +200,7 @@ if (isset($_POST["sort"])) {
             echo $row;
         }
     } else {
-      
+
     }
 }
 ?>

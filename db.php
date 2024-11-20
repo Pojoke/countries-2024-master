@@ -14,28 +14,31 @@ $countries = [
     [
         "name-book" => "друзей Оушена",
         "genres" => "Детектив",
-        "prise" => 17,
+        "price" => 17,
         "autor" => [
             "name-autor" => "Оксана",
             "thir" => "Забужко",
         ],
+        "exemp" => 100,
     ],
     [
         "name-book" => "Собака Баскервілі",
         "genres" => "Фентезі",
-        "price" => 16,
+        "price" => 45,
         "autor" => [
             "name-autor" => "Остап",
             "thir" => "Вишня",
         ],
+        "exemp" => 50,
     ],
     [
         "name-book" => "Кот Леопольд",
         "genres" => "Жахи",
-        "price" => 15,
+        "price" => 19,
         "autor" => [
             "name-autor" => "Олег",
             "thir" => "Дрогобич",
         ],
+        "exemp" => 20,
     ],
 ];

@@ -40,23 +40,25 @@ function genres($a, $b)
 
 function price($a, $b)
 { // функция, определяющая способ сортировки (по названию столицы)
-    // if ($a["price"] < $b["price"]) {
+    if ($a["price"] < $b["price"]) {
+        return -1;
+    } elseif ($a["price"] == $b["price"]) {
+        return 0;
+    } else {
+        return 1;
+    }
+
+    // if ($a["prise"] < $b["prise"]) {
     //     return -1;
-    // } elseif ($a["price"] == $b["price"]) {
+    // } elseif ($a["prise"] == $b["prise"]) {
     //     return 0;
     // } else {
     //     return 1;
     // }
-
-    if ($a="price" == $b="price") {
-        return 0;
-    }
-    return ($a="price" < $b="price") ? -1 : 1;
 }
 
 
 function name($a, $b)
-
 { 
     if ($a="name-book" < $b="name-book") {
         return -1;
@@ -67,8 +69,16 @@ function name($a, $b)
     } 
 
 }
-
-
+function exemp($a, $b) 
+{  
+    if ($a["exemp"] < $b["exemp"]) {
+        return -1;
+    } elseif ($a["exemp"] == $b["exemp"]) {
+        return 0;
+    } else {
+        return 1;
+    }
+}
 
 function autor($a, $b)
 
@@ -118,7 +128,7 @@ function out_arr()
     
     $arr_out = [];
     $arr_out[] = "<div ><table class='table table-hover text-black-20'>";
-    $arr_out[] = "<tr ><td>№</td><td>Назва книги</td><td>Жанр</td><td>Ціна</td><td>Ім'я автора </td><td>Прізвище </td></tr>";
+    $arr_out[] = "<tr ><td>№</td><td>Назва книги</td><td>Жанр</td><td>Ціна</td><td>Ім'я автора </td><td>Прізвище </td> <td>Кількість  </td></tr>";
     foreach ($countries as $country) {
         static $i = 1;
         //статическая глобальная переменная-счетчик
@@ -135,7 +145,7 @@ function out_arr()
             }
 
         }
-        $str .= "<td>" . (array_sum($country['autor']) / count($country['autor'])) . "</td>";
+        // $str .= "<td>" . (array_sum($country['autor']) / count($country['autor'])) . "</td>";
         $str .= "</tr>";
         $arr_out[] = $str;
         $i++;
@@ -168,7 +178,7 @@ function out_arr_search(array $arr_index = null)
 
                 }
             }
-            $str .= "<td>" . (array_sum($country['autor']) / count($country['autor'])) . "</td></tr>";
+            // $str .= "<td>" . (array_sum($country['autor']) / count($country['autor'])) . "</td></tr>";
             $arr_out[] = $str;
             $i++;
         }
