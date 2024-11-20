@@ -69,6 +69,18 @@ function name($a, $b)
     } 
 
 }
+
+function year($a, $b) 
+{  
+    if ($a["year"] < $b["year"]) {
+        return -1;
+    } elseif ($a["year"] == $b["year"]) {
+        return 0;
+    } else {
+        return 1;
+    }
+}
+
 function exemp($a, $b) 
 {  
     if ($a["exemp"] < $b["exemp"]) {
@@ -128,7 +140,7 @@ function out_arr()
     
     $arr_out = [];
     $arr_out[] = "<div ><table class='table table-hover text-black-20'>";
-    $arr_out[] = "<tr ><td>№</td><td>Назва книги</td><td>Жанр</td><td>Ціна</td><td>Ім'я автора </td><td>Прізвище </td> <td>Кількість  </td></tr>";
+    $arr_out[] = "<tr ><td>№</td><td>Назва книги</td><td>Жанр</td><td>Ціна</td><td>Ім'я автора </td><td>Прізвище </td> <td>Кількість</td><td>Рік</td></tr>";
     foreach ($countries as $country) {
         static $i = 1;
         //статическая глобальная переменная-счетчик
@@ -161,7 +173,7 @@ function out_arr_search(array $arr_index = null)
     $arr_out = array();
     $arr_out[] = '<div class="container"><table  class="table table-hover text-black-20">';
     $arr_out[] = "<tr><td>№</td><td>Name</td><td>
-    genres</td><td>price</td><td>name-autor</td><td>surname</td></tr>";
+    genres</td><td>price</td><td>name-autor</td><td>surname</td><td>year</td></tr>";
     foreach ($countries as $index => $country) {
         if ($arr_index != null && in_array($index, $arr_index)) {
             static $i = 1;

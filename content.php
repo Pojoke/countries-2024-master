@@ -183,6 +183,7 @@ $str_form_s = '
         <option value="autor" >Автор</option>
         <option value="genres" >Жанр</option>
         <option value="exemp" >Кількість екземплярів</option>
+        <option value="year" >Рік видання</option>
     </select>
     <input type="submit" name="submit" class="btn btn-info my-3" value="OK" >
 </form>
