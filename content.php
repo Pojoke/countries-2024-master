@@ -166,11 +166,12 @@ if (isset($_POST['gosearch'])) {
         }
     } else // если нет данных
     {
-        echo '
-            <h5 class="card-title">Nothing found...</h5>
-       ';
+
     }
+
+  
 }
+
 
 $str_form_s = '
 <div class="container">
