@@ -146,7 +146,7 @@ function out_arr_search(array $arr_index = null)
     $arr_out = array();
     $arr_out[] = '<div class="container"><table  class="table table-hover text-black-20">';
     $arr_out[] = "<tr><td>№</td><td>Name</td><td>
-    genres</td><td>price UAH</td><td>name-autor</td><td>surname</td><td>year</td></tr>";
+    genres</td><td>price UAH</td><td>name-autor</td><td>surname</td><td>number of books</td><td>year</td></tr>";
     foreach ($countries as $index => $country) {
         if ($arr_index != null && in_array($index, $arr_index)) {
             static $i = 1;
