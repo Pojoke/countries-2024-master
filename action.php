@@ -1,11 +1,11 @@
 <?php
 require_once "db.php";
 
-function check_autorize($log, $pass)
-{
-    global $users;
-    return array_key_exists($log, $users) && $pass == $users[$log]['pass'];
-}
+// function check_autorize($log, $pass)
+// {
+//     global $users;
+//     return array_key_exists($log, $users) && $pass == $users[$log]['pass'];
+// }
 
 // if (check_autorize('rodger', 'qwerty455')) {
 //     echo "Yes";
@@ -13,12 +13,12 @@ function check_autorize($log, $pass)
 //     echo "No";
 // }
 
-function check_admin($log, $pass)
-{
-    global $users;
-    //echo $users[$log]['role'];
-    return check_autorize($log, $pass) && $users[$log]['role'] == 'admin';
-}
+// function check_admin($log, $pass)
+// {
+//     global $users;
+//     //echo $users[$log]['role'];
+//     return check_autorize($log, $pass) && $users[$log]['role'] == 'admin';
+// }
 
 // if (check_admin('alex', 'admin2233')) {
 //     echo "Yes";
@@ -48,13 +48,7 @@ function price($a, $b)
         return 1;
     }
 
-    // if ($a["prise"] < $b["prise"]) {
-    //     return -1;
-    // } elseif ($a["prise"] == $b["prise"]) {
-    //     return 0;
-    // } else {
-    //     return 1;
-    // }
+    
 }
 
 
@@ -102,28 +96,7 @@ function autor($a, $b)
     } else {
         return 1;
     } 
-    // функция, определяющая способ сортировки (по населению)
-    // if ($a["population"]["2000"] + $a["population"]["2010"] < $b["population"]["2000"] + $b["population"]["2010"]) {
-    //     return -1;
-    // } elseif ($a["population"]["2000"] + $a["population"]["2010"] == $b["population"]["2000"] + $b["population"]["2010"]) {
-    //     return 0;
-    // } else {
-    //     return 1;
-    // }
-    // if ($a["name-autor"] < $b["name-autor"]) {
-    //     return -1;
-    // } elseif ($a["name-autor"] == $b["name-autor"]) {
-    //     return 0;
-    // } else {
-    //     return 1;
-    // }
-    // if ($a["thir"] < $b["thir"]) {
-    //     return -1;
-    // } elseif ($a["thir"] == $b["thir"]) {
-    //     return 0;
-    // } else {
-    //     return 1;
-    // }
+    
 
 }
 
@@ -140,7 +113,7 @@ function out_arr()
     
     $arr_out = [];
     $arr_out[] = "<div ><table class='table table-hover text-black-20'>";
-    $arr_out[] = "<tr ><td>№</td><td>Назва книги</td><td>Жанр</td><td>Ціна</td><td>Ім'я автора </td><td>Прізвище </td> <td>Кількість</td><td>Рік</td></tr>";
+    $arr_out[] = "<tr ><td>№</td><td>Назва книги</td><td>Жанр</td><td>Ціна в грн</td><td>Ім'я автора </td><td>Прізвище </td> <td>Кількість</td><td>Рік</td></tr>";
     foreach ($countries as $country) {
         static $i = 1;
         //статическая глобальная переменная-счетчик
@@ -173,7 +146,7 @@ function out_arr_search(array $arr_index = null)
     $arr_out = array();
     $arr_out[] = '<div class="container"><table  class="table table-hover text-black-20">';
     $arr_out[] = "<tr><td>№</td><td>Name</td><td>
-    genres</td><td>price</td><td>name-autor</td><td>surname</td><td>year</td></tr>";
+    genres</td><td>price UAH</td><td>name-autor</td><td>surname</td><td>year</td></tr>";
     foreach ($countries as $index => $country) {
         if ($arr_index != null && in_array($index, $arr_index)) {
             static $i = 1;
