@@ -150,7 +150,7 @@ $str_form_search = "
     <form name='searchForm' action='content.php' method='post' onSubmit='return overify_login(this);'>
         <input type='text' name='search' class='form-control'>
         <input type='submit' name='gosearch' value='Confirm' class='btn btn-secondary my-2'>
-        <input type='reset' name='all' value='All books' class='btn btn-secondary my-2'>
+        
     </form>
 </div>";
 
@@ -174,7 +174,9 @@ if (isset($_POST['gosearch'])) {
 }
 
 
-$str_form_s = '<h3>Сортировать по:</h3>
+$str_form_s = '  
+<div class="container">
+<h3>Sort:</h3>
 <form action="content.php" method="post" name="sort_form" ">
     <select name="sort" id="sort" size="1">
         <option value="name" >Назва книжки  </option>
@@ -183,7 +185,9 @@ $str_form_s = '<h3>Сортировать по:</h3>
         <option value="genres" >Жанр</option>
     </select>
     <input type="submit" name="submit" class="btn btn-info my-3" value="OK" >
-</form>';
+</form>
+</div> ';
+
 echo $str_form_s;
 
 if (isset($_POST["sort"])) {
@@ -197,15 +201,11 @@ if (isset($_POST["sort"])) {
             echo $row;
         }
     } else {
-        echo '<div class="card text-center mt-4">
-        <div class="card-body">
-            <h5 class="card-title">Nothing found...</h5>
-        </div>
-      </div>';
+      
     }
 }
-
-
+?>
+<?php
 include "footer.php";
 ?>
 

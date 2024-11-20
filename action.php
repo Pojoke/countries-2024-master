@@ -54,6 +54,22 @@ function price($a, $b)
     return ($a="price" < $b="price") ? -1 : 1;
 }
 
+
+function name($a, $b)
+
+{ 
+    if ($a="name-book" < $b="name-book") {
+        return -1;
+    } elseif ($a="name-book" == $b="name-book") {
+        return 0;
+    } else {
+        return 1;
+    } 
+
+}
+
+
+
 function autor($a, $b)
 
 { 
@@ -101,8 +117,8 @@ function out_arr()
     // делаем переменную $countries глобальной
     
     $arr_out = [];
-    $arr_out[] = '<table class"table-info">';
-    $arr_out[] = "<tr><td>№</td><td>Назва книги</td><td>Жанр</td><td>Ціна</td><td>Ім'я автора </td><td>Прізвище </td></tr>";
+    $arr_out[] = "<div ><table class='table table-hover text-black-20'>";
+    $arr_out[] = "<tr ><td>№</td><td>Назва книги</td><td>Жанр</td><td>Ціна</td><td>Ім'я автора </td><td>Прізвище </td></tr>";
     foreach ($countries as $country) {
         static $i = 1;
         //статическая глобальная переменная-счетчик
@@ -110,7 +126,7 @@ function out_arr()
         $str .= "<td>" . $i . "</td>";
         foreach ($country as $key => $value) {
             if (!is_array($value)) {
-                $str .= "<td>$value</td>";
+                $str .= "<td >$value</td>";
             } else {
                 foreach ($value as $k => $v) {
                     $str .= "<td>$v</td>";
@@ -124,7 +140,7 @@ function out_arr()
         $arr_out[] = $str;
         $i++;
     }
-    $arr_out[] = "</table>";
+    $arr_out[] = "</table> <div/>";
     return $arr_out;
 }
 
@@ -133,7 +149,7 @@ function out_arr_search(array $arr_index = null)
    
     global $countries; // делаем переменную $countries глобальной
     $arr_out = array();
-    $arr_out[] = "<table  class=\"table table-hover text-black-20 \">";
+    $arr_out[] = '<div class="container"><table  class="table table-hover text-black-20">';
     $arr_out[] = "<tr><td>№</td><td>Name</td><td>
     genres</td><td>price</td><td>name-autor</td><td>thir</td></tr>";
     foreach ($countries as $index => $country) {
@@ -160,7 +176,7 @@ function out_arr_search(array $arr_index = null)
             
         
     }
-    $arr_out[] = "</table>";
+    $arr_out[] = "</table></div>";
 
     return $arr_out;
 }
@@ -191,6 +207,8 @@ function test_input($data)
 {
     return htmlspecialchars(stripslashes(trim($data)));
 }
+
+
 
 function get_users()
 {
