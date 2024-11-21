@@ -146,7 +146,7 @@ include "header.php";
 $str_form_search = "
 <div class=\"container\">
     <h3>Search:</h3>
-    <form name='searchForm' action='content.php' method='post' onSubmit='return overify_login(this);'>
+    <form name='searchForm' action='index.php' method='post' onSubmit='return overify_login(this);'>
         <input type='text' name='search' class='form-control'>
         <input type='submit' name='gosearch' value='Confirm' class='btn btn-secondary my-2'>
 
@@ -176,7 +176,7 @@ if (isset($_POST['gosearch'])) {
 $str_form_s = '
 <div class="container">
 <h3>Sort:</h3>
-<form action="content.php" method="post" name="sort_form" ">
+<form action="index.php" method="post" name="sort_form" ">
     <select name="sort" id="sort" size="1">
         <option value="name" >Назва книжки  </option>
         <option value="price" >Ціна</option>
